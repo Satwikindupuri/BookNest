@@ -1,0 +1,43 @@
+.order-card {
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  font-family: 'Segoe UI', sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.order-card:hover {
+  transform: scale(1.01);
+}
+
+.order-card img {
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+
+.order-details {
+  flex: 1;
+}
+
+.order-details h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.order-details p {
+  margin: 5px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.order-details strong {
+  color: #555;
+}
