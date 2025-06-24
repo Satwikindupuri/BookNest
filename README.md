@@ -36,16 +36,3 @@ BookNest is a MERN Stack-based e-commerce platform for books. It features a **ro
 | **Axios**   | API calls      |
 
 ---
-
-## 📁 Project Structure
-BookNest/
-├── backend/
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ └── index.js
-├── frontend/
-│ ├── pages/
-│ ├── components/
-│ ├── styles/
-│ └── main.jsx
