@@ -5,11 +5,9 @@ import '../styles/Navbar.css';
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const onLandingPage = location.pathname === '/';
-
   const token = localStorage.getItem('token');
-  let decoded = {};
 
+  let decoded = {};
   if (token) {
     try {
       decoded = JSON.parse(atob(token.split('.')[1]));
@@ -31,15 +29,16 @@ const Navbar = () => {
       <div className="navbar-title">BookNest</div>
 
       <div className="nav-links">
-        {onLandingPage ? (
+        {!token && location.pathname === '/' && (
           <>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
           </>
-        ) : token ? (
+        )}
+
+        {token && (
           <>
             {isAdmin && <Link to="/admin-dashboard">Admin Dashboard</Link>}
-
 
             {!isAdmin && !isSeller && (
               <>
@@ -48,17 +47,17 @@ const Navbar = () => {
                 <Link to="/my-orders">My Orders</Link>
               </>
             )}
+
             {isSeller && !isAdmin && (
               <>
                 <Link to="/add-book">Add Book</Link>
-                <Link to="/my-products">My Products</Link> {/* 👈 Changed from /books */}
+                <Link to="/my-products">My Products</Link>
                 <Link to="/seller-dashboard">Seller Dashboard</Link>
               </>
             )}
+
             <button className="logout-btn" onClick={handleLogout}>Logout</button>
           </>
-        ) : (
-          <Link to="/login">Login</Link>
         )}
       </div>
     </nav>
